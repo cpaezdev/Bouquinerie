@@ -1,0 +1,136 @@
+#basket {
+    text-align: center;
+
+    h2,
+    p {
+        text-align: center;
+        margin-bottom: 2rem;
+        padding-left: 0;
+    }
+
+    p {
+        margin-bottom: 0.5rem;
+        font-size: 1.4rem;
+        text-decoration: underline;
+    }
+
+    article {
+        padding: 0 1rem;
+
+        table {
+            @include booksList();
+
+            thead {
+                tr {
+                    th:nth-of-type(3) {
+                        text-align: center;
+                    }
+
+                    th:nth-of-type(5) {
+                        padding-right: 0.5rem;
+                    }
+                }
+            }
+
+            tbody {
+                tr {
+                    td:nth-of-type(2) {
+                        text-align: left;
+                    }
+
+                    td:nth-of-type(3) {
+                        p {
+                            text-align: center;
+                            text-decoration: none;
+                            margin: 0;
+                        }
+                    }
+
+                    //-----BOUTON DE SUPPRESSION-----//
+                    td:nth-of-type(6) {
+                        button {
+                            border: none;
+                            background-color: $white;
+                            color: $blue;
+                        }
+                    }
+                }
+            }
+
+            tfoot {
+                tr {
+                    td {
+                        padding: 1rem 0.3rem;
+                    }
+                }
+
+                tr:nth-of-type(1) {
+                    td:nth-of-type(3) {
+                        text-align: right;
+                        font-weight: bold;
+
+                    }
+
+                    td:nth-of-type(5) {
+                        font-weight: bold;
+                        padding: 0;
+                    }
+                }
+
+                tr:nth-of-type(2) {
+
+                    //-----BOUTON DE VALIDATION-----//
+                    td {
+                        text-align: center;
+                        padding-top: 1rem;
+
+                        button {
+                            @include button();
+                            padding: 0.5rem 1rem;
+                            font-size: 1.5rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//---------------RESPONSIVE---------------//
+
+//TABLETTE
+@media #{$medium} {
+    #basket {
+        article {
+            table {
+
+                thead,
+                tbody {
+                    tr {
+
+                        th,
+                        td {
+                            padding: 1rem;
+                            a {
+                                img {
+                                   width: 60px;
+                                }
+                            }
+                        }
+                        th{
+                            font-size: 1.6rem;
+                        }
+                    }
+                }
+                tfoot{
+                    tr{
+                        td{
+                            font-size: 1.6rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+

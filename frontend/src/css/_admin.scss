@@ -1,0 +1,76 @@
+#admin {
+
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+        text-align: center;
+    }
+
+    h3 {
+        margin-bottom: 0;
+        padding: 0.5rem;
+        background-color: rgba(156, 165, 184, 0.2);
+        box-shadow: -2px -2px 3px $clair;
+    }
+
+    article {
+        margin: 1rem;
+        padding: 1rem 2rem;
+        box-shadow: 2px 2px 3px $clair;
+        width: 100%;
+
+        h4 {
+            margin-bottom: 0;
+
+            a {
+                &:hover {
+                    color: $clair;
+                    //text-decoration: underline;
+                }
+            }
+        }
+
+        p {
+            text-align: justify;
+            font-size: 1.4rem;
+            margin-top: 0;
+        }
+    }
+
+    article:nth-of-type(5) {
+
+        padding: 1rem;
+    }
+
+}
+
+//---------------RESPONSIVE---------------//
+
+//TABLETTE
+@media #{$medium} {
+    #admin {
+        @include flex();
+        flex-direction: row;
+        article {
+            width: 45%;
+        }
+        article:nth-of-type(5){
+            width: 95%;
+        }
+
+    }
+}
+
+//DESKTOP
+@media #{$extra} {
+    #admin{
+        article {
+            width: 47%;
+        }
+       article:nth-of-type(5){
+            width: 97%;
+        }
+    }
+}

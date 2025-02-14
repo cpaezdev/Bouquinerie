@@ -1,0 +1,207 @@
+#book-shop {
+
+    div {
+        font-size: 3rem;
+        background: url(../assets/shopImg/bouquinerie.jpg) center / cover;
+        padding: 10rem;
+    }
+
+    article {
+
+        box-shadow: 2px 2px 3px $clair;
+        color: $blue;
+        width: 100%;
+        margin:0;
+
+        img:nth-of-type(1) {
+            display: none;
+
+        }
+
+        img:nth-of-type(2) {
+            display: block;
+            width: 100%;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        h3 {
+            padding-top: 2rem;
+            padding:0 2rem;
+        }
+
+        p {
+            text-align: justify;
+            padding: 0 2rem;
+        }
+    }
+
+
+    //-----EXPOSITIONS-----//
+    article:nth-of-type(2) {
+        background: $blue;
+        background: radial-gradient(circle, rgba(16, 41, 94, 1) 10%, rgba(6, 22, 56, 1) 90%);
+
+        h3,
+        p {
+            color: $white;
+        }
+        h3{
+            padding: 2rem;
+            margin-top: 0;
+        }
+        p {
+            margin: 0;
+            a{
+                color: $white;
+            }
+        }
+
+        p:nth-of-type(1),
+        p:nth-of-type(4) {
+            margin-bottom: 1rem;
+        }
+        p:nth-of-type(4){
+            margin-bottom: 2rem;
+        }
+
+    }
+
+    //-----HORAIRES ET CONTACTS-----//
+    article:nth-of-type(3) {
+        background: url(../assets/shopImg/fond-livres.jpg) center/cover;
+        text-align: center;
+        padding: 1rem;
+        margin: 2rem auto;
+        width: 90%;
+        h4 {
+            margin-bottom: 0;
+        }
+
+        p:nth-of-type(1) {
+            margin-top: 0;
+            text-align: center;
+            font-size: 1.3rem;
+        }
+
+        ul {
+            text-align: center;
+            padding-left: 0;
+
+            li {
+                font-size: 1.4rem;
+            }
+        }
+
+        address {
+            padding-bottom: 2rem;
+
+            p {
+                text-align: center;
+                font-size: 1.4rem;
+                padding-left: 1rem;
+                padding-bottom: 0.5rem;
+                margin: 0;
+
+                &:first-child {
+                    font-size: 1.4rem;
+                }
+            }
+        }
+
+    }
+}
+
+
+//---------------RESPONSIVE---------------//
+
+//TABLETTE
+@media #{$medium} {
+    #book-shop {
+        div {
+            padding: 15rem;
+            margin-bottom: 5rem;
+        }
+
+        article {
+
+            margin: 5rem auto;
+            padding-left: 2rem;
+            box-shadow: none;
+
+            img:nth-of-type(2) {
+                display: none;
+            }
+
+            img {
+                display: block;
+                width: 40%;
+                opacity: 0.9;
+            }
+
+            &::after {
+                content: "";
+                display: block;
+                clear: both;
+            }
+        }
+
+        article:nth-of-type(1) {
+            h3{
+                padding-top: 3rem;
+                padding-bottom: 2rem;
+            }
+            img:nth-of-type(1) {
+                display: block;
+                float: right;
+                margin: 0 0 0 5rem;
+            }
+        }
+
+        article:nth-of-type(2) {
+            padding-left: 0;
+            padding-right: 3rem;
+            h3{
+                padding-top: 3rem;
+            }
+            img:nth-of-type(1) {
+                display: block;
+                float: left;
+                margin-right: 5rem;
+            }
+        }
+
+        article:nth-of-type(3) {
+            margin-bottom: 5rem;
+            p:nth-of-type(1) {
+                font-size: 1.4rem;
+            }
+
+            address {
+                p {
+                    font-size: 1.5rem;
+                }
+            }
+        }
+    }
+}
+
+//DESKTOP
+@media #{$extra} {
+    #book-shop {
+
+        article {
+            img{
+                width: 40%;
+            }
+        }
+        article:nth-of-type(1){
+            padding-right:10%; 
+            padding-left: 10%;
+        }
+        article:nth-of-type(2){
+            padding-left: 10%;
+            padding-right:10%;
+        }
+    }
+}

@@ -1,0 +1,71 @@
+footer {
+
+    //-----TITLE-----//
+    section:nth-of-type(1) {
+        h2 {
+            padding: 1rem 0 0 0;
+
+        }
+
+        p {
+            font-size: 1.2rem;
+            padding-bottom: 0.5rem;
+        }
+
+        h2,
+        p {
+            @include title-header-footer();
+        }
+    }
+
+    //-----LIENS-----//
+    section:nth-of-type(2) {
+        text-align: center;
+        background: $blue;
+        background: radial-gradient(circle, rgba(16, 41, 94, 1) 0%, rgba(6, 22, 56, 1) 70%);
+
+        a,
+        p {
+            color: $white;
+        }
+
+        a {
+            padding-right: 0.5rem;
+        }
+
+        article {
+            padding-bottom: 1rem;
+
+            p {
+                font-size: 1.2rem;
+                margin: 0;
+            }
+        }
+    }
+}
+
+
+//-----RESPONSIVE-----//
+
+//TABLETTE
+@media #{$medium} {
+    footer {
+
+        //-----TITLE-----//
+        section:nth-of-type(1) {
+            h2 {
+                padding-top: 3rem;
+            }
+        }
+
+        //-----LIENS-----//
+        section:nth-of-type(2) {
+            padding-bottom: 2rem;
+            p{
+                a{
+                    font-size: 1.4rem;
+                }
+            }
+        }
+    }
+}

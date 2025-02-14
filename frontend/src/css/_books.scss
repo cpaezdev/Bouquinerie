@@ -1,0 +1,77 @@
+#all-books,
+#category,
+#by-author {
+
+    article {
+        @keyframes livres {
+            0% {
+                transform: translateX(-200%) scale(0.5);
+            }
+
+            100% {
+                transform: translateX(0%) scale(1);
+            }
+        }
+        animation: livres 0.5s ease-in;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+
+    h2 {
+        padding-left: 2rem;
+    }
+
+    margin-bottom: 3rem;
+    @include flex();
+    @include bookDisplay();
+}
+
+
+//---------------RESPONSIVE---------------//
+
+//TABLETTE
+@media #{$medium} {
+
+    #all-books,
+    #category,
+    #by-author {
+
+        justify-content: flex-start;
+
+        article {
+            width: 23%;
+            margin: 1rem 0.5rem 3rem 1rem;
+            padding: 1rem 1rem 4rem 1rem;
+            text-align: center;
+
+            h4,
+            p {
+                text-align: left;
+            }
+
+            a {
+                img {
+                    float: none;
+                    max-width: 90%;
+                    padding: 0;
+                }
+
+                div {
+                    padding: 0 1rem;
+                }
+            }
+
+            button {
+                max-width: 100%;
+                left: 9%;
+                right: 9%;
+                bottom: -3%;
+                margin-left: 0;
+            }
+
+        }
+
+    }
+}

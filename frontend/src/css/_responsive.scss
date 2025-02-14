@@ -1,0 +1,8 @@
+// Styles par défaut pour les mobiles
+$mobile: "screen and (max-width: 768px)";
+
+// Appareils moyens (tablettes, 768px et plus)
+$medium: "only screen and (min-width: 768px)";
+
+// Très grands appareils (grands écrans d'ordinateurs, 1200px et plus)
+$extra: "only screen and (min-width: 1024px)";

@@ -1,0 +1,250 @@
+@import "_contact";
+
+//-----AJOUT ET MODIFICATION D UN LIVRE, AUTEUR, GENRE ET ETAT-----//
+#add-books,
+#edit-book,
+#add-authors,
+#edit-authors,
+#add-category,
+#edit-category,
+#add-condition {
+
+    @extend #contact;
+
+    h2 {
+        padding: 0 2rem;
+    }
+
+    form {
+        max-width: 80%;
+        margin: 2rem auto;
+        input,
+        textarea {
+            border-radius: 0.2rem;
+        }
+
+        select {
+            margin-bottom: 1rem;
+        }
+
+        textarea {
+            margin-bottom: 1rem;
+        }
+    }
+
+}
+
+
+//-----MODIFICATION D UN LIVRE-----//
+#edit-book {
+    h2{
+        margin-top: 2rem;
+    }
+    form {
+        input[type="submit"] {
+            width: 100%;
+            margin-top: 0;
+        }
+
+        p {
+            @include message();
+        }
+    }
+
+    //-----UPDATE BOOK-----//
+    article:nth-of-type(1) {
+        form {
+            padding-bottom: 1rem;
+            
+            input,
+            textarea {
+                width: 100%;
+            }
+
+            div {
+                display: flex;
+                align-content: flex-start;
+                flex-direction: column;
+
+                img {
+                    width: 35%;
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+    }
+
+    //-----ADD AND DELETE AUTHOR(s)-----//
+article:nth-of-type(2) {
+
+    h2 {
+        margin: 1rem;
+    }
+
+    div {
+        display: flex;
+        justify-content: space-between;
+        @include buttonDelete();
+
+        button {
+            margin-left: 1rem;
+            width: 90%;
+        }
+    }
+}
+}
+
+
+
+//-----LISTE DE TOUS LES LIVRES-----//
+#books-list {
+    text-align: center;
+    p:nth-of-type(1){
+        margin: 0;
+    }
+    //-----BOUTON AJOUT D UN LIVRE-----//
+    p:nth-of-type(2) {
+        a {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            box-shadow: 5px 5px 15px #c3cee6;
+        }
+
+    }
+
+    //-----LISTE DES LIVRES-----//
+    article {
+        padding: 0.5rem;
+
+        table {
+            @include booksList();
+        }
+    }
+}
+
+//-----AJOUT AUTEUR et LISTE DE TOUS LES AUTEURS-----//
+//-----AJOUT GENRE et LISTE DE TOUS LES GENRES-----//
+//-----AJOUT ETAT et LISTE DE TOUS LES ETATS-----//
+#add-authors,
+#add-category,
+#add-condition {
+
+    //---AJOUT AUTEUR---//
+    //---AJOUT GENRE---//
+    //---AJOUT ETAT---//
+    article:nth-of-type(1) {
+        form {
+            input[type="submit"] {
+                width: 30%;
+                margin-top: 0;
+            }
+        }
+    }
+
+    //---LISTE DE TOUS LES AUTEURS---//
+    //---LISTE DE TOUS LES GENRES---//
+    //---LISTE DE TOUS LES ETATS---//
+    article:nth-of-type(2) {
+        padding: 1rem 1rem 2rem 1rem;
+
+        h2 {
+            margin-bottom: 1rem;
+        }
+
+        p {
+            @include message();
+        }
+
+        @include table();
+
+        table {
+            tbody {
+                tr {
+                    td {
+                        padding: 1rem 2rem;
+                    }
+
+                    td:nth-of-type(3) {
+                        a {
+                            padding-right: 0.5rem;
+                        }
+
+                        @include buttonDelete();
+                    }
+                }
+            }
+        }
+    }
+}
+
+#add-category,
+#add-condition {
+    table {
+        tbody {
+            tr {
+                td:nth-of-type(2) {
+                    a {
+                        padding-right: 0.5rem;
+                    }
+
+                    @include buttonDelete();
+                }
+            }
+        }
+    }
+}
+
+//---------------RESPONSIVE---------------//
+
+//TABLETTE
+@media #{$medium} {
+
+    #add-books,
+    #edit-book,
+    #add-authors,
+    #edit-authors,
+    #add-category,
+    #edit-category,
+    #add-condition {
+        form {
+            width: 50%;
+        }
+    }
+    //-----LISTE DE TOUS LES LIVRES-----//
+#books-list{
+    article{
+        margin: 2rem auto;
+    }
+    table{
+      thead,
+        tbody{
+            tr{  
+                th,
+                td{
+                        font-size: 1.5rem;
+                        padding: 1rem;
+                }
+            }
+        }
+    }
+
+}
+}
+
+//DESKTOP
+@media #{$extra} {
+
+    #add-books,
+    #edit-book,
+    #add-authors,
+    #edit-authors,
+    #add-category,
+    #edit-category,
+    #add-condition {
+        form {
+            width: 35%;
+        }
+    }
+
+}

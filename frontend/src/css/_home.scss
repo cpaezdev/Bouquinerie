@@ -1,0 +1,248 @@
+main {
+    display: block;
+    margin: 0 auto;
+
+    h2 {
+        padding-left: 2rem;
+    }
+
+    //-------LES PETITS DERNIERS-------//
+    section:nth-of-type(1) {
+        @include flex();
+        @include bookDisplay();
+        margin-bottom: 2rem;
+
+        article {
+            @keyframes livres {
+                0% {
+                    transform: translateX(-200%) scale(0.5);
+                }
+
+                100% {
+                    transform: translateX(0%) scale(1);
+                }
+            }
+
+            animation: livres 0.5s ease-in;
+
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+    }
+
+    //-------PAR GENRE-------//
+    section:nth-of-type(2) {
+        background: $blue;
+        background: radial-gradient(circle, rgba(16, 41, 94, 1) 10%, rgba(6, 22, 56, 1) 90%);
+
+        h2 {
+            margin: 1rem;
+            color: $white;
+        }
+
+        article {
+            margin: 0 2rem;
+
+            ul {
+
+                margin-top: 0;
+                padding: 0 0.7rem 2rem 0;
+                min-width: 30%;
+
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(29%, 1fr));
+
+                li {
+                    position: relative;
+                    width: 90%;
+                    min-width: 33%;
+
+                    text-align: center;
+                    align-self: stretch;
+                    object-fit: cover;
+
+                    background-color: $white;
+                    border-radius: 0.5rem;
+                    padding: 3rem;
+                    margin: 1rem;
+
+                    &:hover {
+                        transform: scale(0.9);
+                    }
+
+                    a {
+                        position: absolute;
+                        top: 0.9rem;
+                        bottom: 0;
+                        right: 0;
+                        left: 0;
+                        color: $blue;
+                    }
+                }
+            }
+        }
+    }
+
+    //-------BOUQUINERIE-------//
+    section:nth-of-type(3) {
+
+        padding: 0 3rem 2rem 3rem;
+        color: $blue;
+
+        article {
+
+            h2 {
+                color: $blue;
+                text-align: left;
+                padding: 1rem 0;
+            }
+
+            p {
+                text-align: justify;
+                margin: 0;
+            }
+
+            button {
+                @include button();
+                display: block;
+                margin: 1rem 0;
+                padding: 0.5rem 2rem;
+            }
+        }
+    }
+}
+
+//---------------RESPONSIVE---------------//
+
+//TABLETTE
+@media #{$medium} {
+    main {
+        section {
+            margin: 0 1rem;
+        }
+
+        //-------LES PETITS DERNIERS-------//
+        section:nth-of-type(1) {
+            margin-bottom: 5rem;
+
+            article {
+                width: 23%;
+                padding: 1rem 1rem 5rem 1rem;
+                text-align: center;
+
+                h4,
+                p {
+                    text-align: left;
+                }
+
+                a {
+                    img {
+                        float: none;
+                        max-width: 90%;
+                        padding: 0;
+                    }
+
+                    div {
+                        padding: 0 1rem;
+                    }
+                }
+
+                button {
+                    max-width: 100%;
+                    left: 9%;
+                    right: 9%;
+                    bottom: -3%;
+                    margin-left: 0;
+                }
+
+            }
+        }
+
+        //-------PAR GENRE-------//
+        section:nth-of-type(2) {
+            margin: 0;
+            padding-bottom: 2rem;
+
+            //    border-radius: 0.5rem;
+            article {
+                margin: 0;
+
+                ul {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fit, minmax(25%, 1fr));
+                    margin-bottom: 0;
+                    padding: 0 2rem;
+
+                    li {
+                        a {
+                            top: 1.8rem;
+                        }
+                    }
+                }
+            }
+        }
+
+        //-------BOUQUINERIE-------//
+        section:nth-of-type(3) {
+
+            background: url(../assets/shopImg/FacadeBDS.jpg)center / cover;
+            
+            display: flex;
+            justify-content: right;
+            margin: 5rem 2rem;
+            padding: 3rem;
+            border-radius: 1.5rem;
+
+            article {
+                width: 20%;
+
+                img {
+                    display: none;
+                }
+
+                h2 {
+                    flex: 1 0 100%;
+
+                }
+                p{
+                    font-weight: bold;
+                    line-height: 1.7;
+                }
+
+            }
+        }
+    }
+}
+
+//DESKTOP
+@media #{$extra} {
+    main {
+        section {
+            margin: 0;
+        }
+
+        //-------LES PETITS DERNIERS-------//
+        section:nth-of-type(1) {
+            justify-content: space-between;
+
+            article {
+                width: 22%;
+            }
+        }
+
+        //-------BOUQUINERIE-------//
+        section:nth-of-type(3) {
+            margin: 5rem 0rem;
+    
+            article{
+                width: 25%;
+
+                p:nth-of-type(2){
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+
+    }
+}

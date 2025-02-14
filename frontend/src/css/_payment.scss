@@ -1,0 +1,75 @@
+#payment,
+#success {
+   padding: 0 10%;
+   margin: 0 auto;
+
+   h2,
+   p {
+      text-align: center;
+      margin: 0;
+   }
+
+   form {
+
+      color: $blue;
+      background: $white;
+      box-shadow: 4px 4px 10px $blue;
+      border-radius: 0.5rem;
+      padding: 2rem;
+      margin: 2rem auto;
+
+      button {
+
+         @include button();
+         display: block;
+         padding: 0.5rem 2rem;
+         margin: 5rem auto 0 auto;
+      }
+
+   }
+}
+
+#success {
+   p {
+      color: $success;
+      margin: 3rem 0 5rem 0;
+   }
+
+   a {
+      display: block;
+      text-align: center;
+   }
+}
+
+//-----RESPONSIVE-----//
+
+//TABLETTE
+@media #{$medium} {
+
+   #payment {
+      padding: 0 25%;
+
+   }
+
+   #success {
+      p {
+         margin: 3rem 0 7rem 0;
+      }
+
+   }
+}
+
+//DESKTOP
+@media #{$extra} {
+
+   #payment {
+      padding: 0 30%;
+
+   }
+
+   #success {
+      p {
+         margin: 3rem 0 10rem 0;
+      }
+   }
+}

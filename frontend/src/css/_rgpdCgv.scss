@@ -1,0 +1,30 @@
+#rgpd,
+#cgv {
+    margin: 1rem;
+    h2 {
+        text-align: center;
+    }
+    h3, h4{
+        margin-bottom: 0;
+    }
+    h4{
+        padding-left: 2rem;  
+    }
+    p {
+        text-align: justify;
+        padding: 1rem;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}
+
+
+//---------------RESPONSIVE---------------//
+
+//TABLETTE
+@media #{$medium}{
+    #rgpd,
+    #cgv{
+       margin: 0 auto;
+    } 
+}

@@ -1,0 +1,225 @@
+@import "_responsive";
+
+//-------HEADER & FOOTER-------//
+
+@mixin logotext-header($color: $blue) {
+    font-family: "Abril Fatface", serif;
+    font-weight: 400;
+    font-style: normal;
+    color: $color;
+}
+
+@mixin title-header-footer($color: $white, $bgc: $blue) {
+    font-family: "Abril Fatface", serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+    color: $color;
+  
+    background: $blue;
+    background: radial-gradient(circle, rgba(16, 41, 94, 1) 0%, rgba(6, 22, 56, 1) 70%);
+    text-align: center;
+}
+
+
+
+//-------BOOKDISPLAY-------//
+@mixin flex() {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    column-gap: 0;
+    row-gap: 1rem;
+
+    h2 {
+        flex: 100%;
+    }
+}
+
+//-------BOOKDISPLAY-------//
+@mixin bookDisplay() {
+    article {
+        position: relative;
+        width: 90%;
+
+        margin: 0.5rem 0;
+        padding-bottom: 1rem;
+
+        box-shadow: 5px 5px 15px #c3cee6;
+        border-radius: 0.25rem;
+
+        p:nth-of-type(1) {
+            @include message();
+            margin: 0;
+            padding-top: 0;
+        }
+
+        a {
+
+            h4 {
+                padding: 0 1rem;
+                margin: 0 0 0.5rem 0;
+                font-size: 1.5rem;
+                line-height: 1.5rem;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
+            p {
+                font-size: 1.4rem;
+                line-height: 1.4rem;
+            }
+
+
+            img {
+                float: left;
+                padding: 0 1rem;
+                max-width: 100px;
+            }
+
+            #authors-display {
+                display: flex;
+                flex-direction: column;
+
+                p {
+                    margin: 0.2rem;
+                    padding: 0;
+                }
+            }
+
+        }
+
+        button {
+            max-width: 25%;
+            position: absolute;
+            left: 70%;
+            right: 3%;
+            bottom: -3%;
+
+            margin: 1rem 0 2rem 0;
+            padding: 0.5rem 1rem;
+
+            @include button();
+        }
+    }
+}
+
+@mixin buttonDelete() {
+    button {
+        border: none;
+        background-color: $white;
+        color: $blue;
+    }
+}
+
+
+@mixin button($color: $white, $bgc: $blue) {
+    background-color: $bgc;
+    color: $color;
+    border-radius: 0.5rem;
+    margin-left: 1rem;
+}
+
+@mixin message() {
+    margin: 0 auto;
+    padding: 1rem;
+
+    // Si le paragraphe a la classe .error
+    &.error {
+        color: $error;
+    }
+
+    // Si le paragraphe a la classe .success
+    &.success {
+        color: $success;
+    }
+}
+
+@mixin form() {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0 auto;
+
+    label {
+        font-size: 1.4rem;
+        width: 80%;
+    }
+
+    input,
+    textarea {
+        width: 100%;
+        padding: 0.5rem;
+        margin: 0 auto;
+
+        margin-bottom: 1rem;
+        border-radius: 0.5rem;
+        border: none;
+        background-color: rgba(156, 165, 184, 0.2);
+    }
+
+    textarea {
+        height: 10rem;
+    }
+
+    input[type="submit"] {
+        @include button();
+        margin: 0 auto;
+        padding: 0.5rem;
+    }
+}
+
+@mixin table() {
+    table {
+        margin: 0 auto;
+        border-collapse: collapse;
+        border-left: 3px solid $blue;
+        border-bottom: 3px solid $blue;
+
+        tr {
+
+            th,
+            td {
+                padding: 0.2rem;
+                text-align: center;
+                border: 1px solid $clair;
+            }
+        }
+
+    }
+}
+
+@mixin booksList() {
+    margin: 0 auto;
+    font-size: 1.4rem;
+    border-collapse: collapse;
+
+    thead {
+        tr {
+            th {
+                text-align: left;
+            }
+        }
+    }
+
+    tbody {
+        tr {
+            td {
+                padding: 0.2rem;
+
+                img {
+                    width: 50px;
+                }
+            }
+        }
+        tr{
+          td:nth-of-type(1),
+        td:nth-of-type(2){
+text-align: left;
+        }  
+        }
+        
+    }
+}

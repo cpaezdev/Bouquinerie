@@ -1,0 +1,50 @@
+#contact {
+
+    p,
+    h2 {
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    p:nth-of-type(1) {
+     font-size: 1.4rem;
+     margin-bottom: 1rem;
+    }
+    p:nth-of-type(2) {
+        @include message();
+        margin: 1rem 0;
+        padding: 0
+    }
+
+    form {
+        @include form();
+        margin: 0 2rem 2rem 2rem;
+        box-shadow: 2px 2px 3px $clair;
+        padding: 2rem;
+
+        input, textarea {
+            background-color: $white;
+            border: 1px solid $blue;
+        }
+
+        input[type="submit"] {
+            width: 40%;
+            margin-top: 2rem;
+        }
+    }
+
+}
+
+//---------------RESPONSIVE---------------//
+
+//TABLETTE
+@media #{$medium}{
+
+    #contact{
+        form{
+            margin: 2rem auto;
+            width: 50%;
+        }
+    }
+}

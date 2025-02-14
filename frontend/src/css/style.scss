@@ -1,0 +1,136 @@
+@import "_normalize";
+@import "_colorsVars";
+@import "_mixins";
+
+@import "_header";
+@import "_footer";
+
+@import "_home";
+
+@import "_detail";
+@import "_books";
+
+@import "_bookShop";
+
+@import "_contact";
+@import "_rgpdCgv";
+
+//USER
+@import "_login";
+@import "_register";
+@import "_profil";
+@import "_orderDisplay";
+
+//ADMIN
+@import "_admin";
+@import "_adminBooks";
+@import "_adminOrders";
+@import "_adminUsersContacts";
+
+//PANIER
+@import "_basket";
+//PAYMENT
+@import "_payment";
+
+@import "_responsive";
+
+
+//---------------GENERALITES-----------------//
+*{
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+    margin: 0;
+    padding:0;
+
+}
+
+/* Font Atkinson Regular */
+@font-face {
+    font-family: "Atkinson Hyperlegible";
+    font-weight: 400;
+    font-style: normal;
+
+    src: local(''),
+    url('../../src/assets/fonts/AtkinsonHyperlegible/AtkinsonHyperlegible-Regular.ttf') format('ttf');
+
+}
+/* Font Atkinson Bold */
+@font-face {
+    font-family: "Atkinson Hyperlegible";
+    font-weight: 700;
+    font-style: normal;
+
+    src: local(''), 
+    url('../../src/assets/fonts/AtkinsonHyperlegible/AtkinsonHyperlegible-Bold.ttf') format('ttf');
+
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    min-height: 100vh;
+    margin: 0;
+    padding:0;
+    height: 100%;
+    font-family: "Atkinson Hyperlegible", sans-serif;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    color: $blue;
+
+    background-color: $white;
+}
+
+.container{
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+h1{
+    font-size: 2.2rem;
+}
+h2{
+    padding-top: 2rem;
+    font-size: 2rem;
+    margin: 0;
+}
+h3{
+    font-size: 1.8rem;
+    padding-left: 1rem;
+}
+h4{
+    font-size: 1.6rem;
+}
+
+a{  
+    color: $blue;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+img{
+    width: 100%;
+}
+
+li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+main{
+ min-height: 100vh;
+}
+
+
+
+
+
+
+

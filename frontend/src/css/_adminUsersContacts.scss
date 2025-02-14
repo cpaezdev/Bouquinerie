@@ -1,0 +1,98 @@
+//-----LISTES DES UTILISATEURS ET SUPPRESSION-----//
+//-----LISTES DES MESSAGES CONTACTS ET SUPPRESSION-----//
+#admin-users,
+#admin-contacts {
+    text-align: center;
+
+    h2 {
+        margin-bottom: 0.5rem;
+    }
+
+    p {
+        margin-top: 0;
+    }
+
+    p:nth-of-type(2) {
+        @include message();
+    }
+
+    article {
+        margin-bottom: 2rem;
+
+        @include table();
+
+        table {
+            font-size: 1.35rem;
+
+            tbody {
+                tr {
+                    td:nth-of-type(4) {
+                        @include buttonDelete();
+                    }
+                }
+            }
+        }
+    }
+}
+
+//-----LISTES DES MESSAGES CONTACTS ET SUPPRESSION-----//
+#admin-contacts {
+    article {*   
+        table {
+            font-size: 1.35rem;
+            tbody {
+                tr {
+                    td:nth-of-type(5) {
+                        @include buttonDelete();
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+//-----LECTURE D UN MESSAGE-----//
+#admin-message {
+    text-align: center;
+
+    article {
+        margin: 1rem;
+        padding: 2rem;
+        text-align: left;
+
+        p {
+            font-size: 1.4rem;
+            margin: 0rem;
+        }
+
+        div {
+            margin: 1rem;
+            padding: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: 5px 5px 15px #c3cee6;
+        }
+    }
+}
+
+//---------------RESPONSIVE---------------//
+
+//TABLETTE
+@media #{$medium}{
+    #admin-users,
+#admin-contacts{
+    table{
+        font-size: 1.5rem;
+        thead,
+        tbody{
+            tr{
+                th,
+                td{
+                    padding: 1rem;
+                }
+            }
+        }
+    }
+}
+}
+
